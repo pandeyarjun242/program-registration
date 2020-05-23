@@ -26,13 +26,13 @@ class Signup(APIView):
             except:
                 return render(request,'signup.html', {"error": "Please enter a valid email ID"})
             try:
-                email = Player.objects.get(request.POST['email'])
-                return render(request, 'account/signup.html', {"error":"Account already exists from this Email ID"})
+                email = Player.objects.get(email = request.POST['email'])
+                return render(request, 'signup.html', {"error":"Account already exists from this Email ID"})
             except:
                 pass
             try:
-                num = player.objects.get(request.POST['email'])
-                return render(request, 'account/signup.html', {"error":"Account already exists from this Mobile Number"})
+                num = player.objects.get(request.POST['mobile'])
+                return render(request, 'signup.html', {"error":"Account already exists from this Mobile Number"})
             except:
                 pass
             name = request.POST['name']
@@ -40,10 +40,9 @@ class Signup(APIView):
             cityPreference = request.POST['cityPreference']
             message = request.POST['message']
             mobile = request.POST['mobile']
-            profile = Player(name = request.POST['name'], email = request.POST['email'], mobile = request.POST['mobile'], cityPreference = request.POST['cityPreference'], description =message)
-            finmessage =  "Hi "+name+"\n\nWe are thrilled to let you know that you have been registered into India's first Trans Football Program. We have a lot of exciting stuff coming up! Stay tuned for more and let's rid the football ground of cis-sexist biases together.\n\nThe program is the brainchild of ScoutMe, The Keshav Suri Foundation and Bhaichung Bhutia Football Schools. Be sure to give us your support on social media \nBest, Arjun Pandey\nFounder at ScoutMe"
-            emai = EmailMessage('Registration Complete!',finmessage, to=[str(email)])
-            emai.send()
+            profile = Player(name = name, email = email, mobile = mobile, age = 15, description =message, cityPreference = cityPreference)
+            emailm = EmailMessage('Registration Complete!',"Hi "+name+"\n\nWe are thrilled to let you know that you have been registered into India's first Trans Football Program. We have a lot of exciting stuff coming up! Stay tuned for more and let's rid the football ground of cis-sexist biases together.\n\nThe program is the brainchild of ScoutMe, The Keshav Suri Foundation and Bhaichung Bhutia Football Schools. Be sure to give us your support on social media \n\nBest,\nArjun Pandey\nFounder at ScoutMe", to=[str(email)])
+            emailm.send()
             newEmail = EmailMessage('Registration - '+name, "\nEmail - "+email+"\nMobile- "+mobile +"\nMessage - " + message, to = ["arjun@scoutme.in"])
             newEmail.send()
             profile.save()
