@@ -8,6 +8,11 @@ from django.core.validators import validate_email
 from django.core.mail import EmailMessage
 from django.core.mail import send_mail
 from django.conf import settings
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+import smtplib
+import string
 # Create your views here.
 class Home(APIView):
     def get(self,request):
@@ -44,14 +49,25 @@ class Signup(APIView):
             mobile = request.POST['mobile']
             profile = Player(name = name, email = email, mobile = mobile, age = 15, description =message, cityPreference = cityPreference)
             finm = "Hi "+name+"\n\nWe are thrilled to let you know that you have been registered into India's first Trans Football Program. We have a lot of exciting stuff coming up! Stay tuned for more and let's rid the football ground of cis-sexist biases together.\n\nThe program is the brainchild of ScoutMe, The Keshav Suri Foundation and Bhaichung Bhutia Football Schools. Be sure to give us your support on social media \n\nBest,\nArjun Pandey\nFounder at ScoutMe"
-            # emailm = EmailMessage('Registration Complete!',"Hi "+name+"\n\nWe are thrilled to let you know that you have been registered into India's first Trans Football Program. We have a lot of exciting stuff coming up! Stay tuned for more and let's rid the football ground of cis-sexist biases together.\n\nThe program is the brainchild of ScoutMe, The Keshav Suri Foundation and Bhaichung Bhutia Football Schools. Be sure to give us your support on social media \n\nBest,\nArjun Pandey\nFounder at ScoutMe", to=[str(email)])
-            # emailm.send()
-            # newEmail = EmailMessage('Registration - '+name, "\nEmail - "+email+"\nMobile- "+mobile +"\nMessage - " + message, to = ["arjun@scoutme.in"])
-            # newEmail.send()
-            # profile.save()
-            email_from = settings.EMAIL_HOST_USER
-            send_mail('Registration Complete!',finm, email_from,[str(email),])
-            send_email('Registration - '+name, "\nEmail - "+email+"\nMobile- "+mobile +"\nMessage - " + message,email_from,["arjun@scoutme.in,"])
+            msg = MIMEMultipart()
+            msg['From'] = "arjun@scoutme.in"
+            msg['To'] = email
+            msg['Subject'] = 'Registration - Complete'
+            msg.attach(MIMEText(finm,'plain'))
+            text = msg.as_string()
+            profile.save()
+            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server.starttls()
+            server.login('arjun@scoutme.in', 'arjun2003')
+            server.sendmail('arjun@scoutme.in',[email],text)
+            newmsg = MIMEMultipart()
+            newmsg['From'] = "arjun@scoutme.in"
+            newmsg['To'] = "arjun@scoutme.in"
+            newmsg['Subject'] = 'registered'
+            n =  "\nEmail - "+email+"\nMobile- "+mobile +"\nMessage - " + message
+            newmsg.attach(MIMEText(n,'plain'))
+            newtext = newmsg.as_string()
+            server.sendmail('arjun@scoutme.in',["arjun@scoutme.in"],newtext)
             return render(request, 'aftersignup.html',{"error":"Your account has been created!"})
 class Contact(APIView):
     def get(self, request):
@@ -61,8 +77,25 @@ class Contact(APIView):
         email = request.POST['email']
         message = request.POST['message']
         subject = request.POST['subject']
-        newEmail = EmailMessage('Contact Query at Kicking Gender Boundaries', "Hi "+name+"\n\nThank you for your query! We will be reaching out to you in the next 3 days.\n\nStay tuned for more! \n\nBest,\nThe Kicking Gender Boundaries Team", to = [str(email)])
-        newEmail.send()
-        email = EmailMessage('New Contact Query - '+subject, "Name - "+name+"\nEmail - "+email+"\nSubject - "+subject+"\nMessage - "+message, to = ["arjun@scoutme.in"])
-        email.send()
+        userm =  "Hi "+name+"\n\nThank you for your query! We will be reaching out to you in the next 3 days.\n\nStay tuned for more! \n\nBest,\nThe Kicking Gender Boundaries Team"
+        msg = MIMEMultipart()
+        msg['From'] = "arjun@scoutme.in"
+        msg['To'] = email
+        msg['Subject'] = 'Contact Query'
+        msg.attach(MIMEText(userm,'plain'))
+        text = msg.as_string()
+        # Hello
+        mym = "Name - "+name+"\nEmail - "+email+"\nSubject - "+subject+"\nMessage - "+message
+        newmsg = MIMEMultipart()
+        newmsg['From'] = "arjun@scoutme.in"
+        newmsg['To'] = "arjun@scoutme.in"
+        newmsg['Subject'] = 'Contact Query'
+        newmsg.attach(MIMEText(mym,'plain'))
+        newtext = newmsg.as_string()
+        #Gaps for convenience
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login('arjun@scoutme.in', 'arjun2003')
+        server.sendmail('arjun@scoutme.in',[email],text)
+        server.sendmail('arjun@scoutme.in',["arjun@scoutme.in"],newtext)
         return redirect('home')
