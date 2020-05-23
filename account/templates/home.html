@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <style media="screen">
+      .fa{
+        font-size:35px;
+
+      }
+      .nowid{
+
+      }
+      .ms{
+        margin-left:10vw;
+      }
+      .navbg{
+
+      }
+      @media only screen and (max-width:990px){
+        .nowid{
+          text-align: center !important;
+        }
+        .banner_text_iner h5{
+          text-align: center !important;
+          margin-left: 20px;
+        }
+        nav{
+          display: none;
+        }
+        nav{
+          width:0;
+          height:0;
+        }
+        nav a img{
+          width:0;
+          height:0;
+        }
+        .navbar-toggler{
+          width:0;
+          height:0;
+        }
+
+      }
+      .rig{
+        text-align: right;
+      }
+      .banner_part{
+        background-image: url({% static 'fball.jpeg' %})
+      }
+      .single_client_logo{
+        width: 8vw;
+        height:8vw;
+        margin: 0 100px !important;
+      }
+      .wid{
+        width:80vw;
+      }
+      @media only screen and (max-width:1100px){
+
+        .ms{
+          margin: 0 !important;
+        }
+      }
+      .navbar-brand{
+        width:9vh;
+        height:9vh;
+      }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Kicking Gender Boundaries</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css'%}" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{% static 'animate.css'%}" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{% static 'owl.carousel.min.css' %}" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{% static 'themify-icons.css' %}" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'flaticon.css'%}" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{% static 'magnific-popup.css'%}" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{% static 'slick.css'%}" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{% static 'style.css'%}" />
+  </head>
+
+  <body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu" style="background:#00d089">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="index.html">
+                <img src="{% static 'bbfs.jpg' %}" alt="logo" />
+              </a>
+              <a class="navbar-brand" href="index.html">
+                <img src="{% static 'ksfw.jpg' %}" alt="logo" />
+              </a>
+              <a class="navbar-brand" href="index.html">
+                <img src="{% static 'scoutme.png' %}" alt="logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="ti-menu"></span>
+              </button>
+
+              <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav align-items-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="social_icon d-none d-lg-block">
+                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- banner part start-->
+    <section class="banner_part" style="background-image:url({% static 'fball.jpeg' %})">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 offset-lg-1">
+            <div class="banner_text">
+              <div class="banner_text_iner">
+
+                <h1 class="nowid">Kicking Gender Boundaries </h1>
+                <br>
+                <h5 class="wid"> We are India's first national level trans inclusivity program! We provide sprot opportunites and a job platform for Trans community to shine and showcase their talents</h5>
+                <a href="#" class="btn_1">Register today!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- banner part start-->
+
+    <!--::client logo part end::-->
+    <section class="client_logo">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <div
+              class="client_logo_slider owl-carousel d-flex justify-content-between"
+            >
+              <div class="single_client_logo">
+                <img src="{% static 'bbfs.jpg' %}" alt="" />
+              </div>
+              <div class="single_client_logo">
+                <img src="{% static 'scoutme.png' %}" alt="" />
+              </div>
+              <div class="single_client_logo">
+                <img src="{% static 'ksfw.jpg' %}" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--::client logo part end::-->
+
+    <!-- about part start-->
+    <section class="about_part section_padding">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-6">
+            <div class="about_part_text">
+              <h5>In sports!</h5>
+              <h2>Changing the world through sports</h2>
+              <p>
+                Our goal is to make sport free, accessible and genderless.
+                For years the sports ground has been subject cis-sexist activities.
+                Through this program we want to break the stereotypes and allow everyone acces to sport!
+              </p>
+              <a href="{% url 'contact' %}" class="btn_1">Contact Us</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div class="about_part_text rig">
+                <h5>D&I in the workplace</h5>
+                <h2>Sensitizing the workplace</h2>
+                <p>
+                    The workplace can be a huge avenue for cis-sexist activites!
+                    For decades, the trans have been neglected and discriminated against but we plan to give
+                    everyon equal opportunity. Sign Up today!!
+                </p>
+                <a href="#" class="btn_1">Register with us!</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about part end-->
+
+    <!-- our_service start-->
+    <section class="our_service">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-xl-4">
+            <div class="single_feature">
+              <div class="single_service">
+                <span>01</span>
+                <h4>
+                  National Exhibition <br />
+                  matches
+                </h4>
+                <p>
+                 We sensitize populations city by city, holding exhibition matches and spreading the word across the nation
+                </p>
+                <ul>
+                  <li><a href="#">Making Impact</a></li>
+                  <li><a href="#">Breaking Stereotype</a></li>
+                  <li><a href="#">Spreading the word</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-4">
+            <div class="single_feature">
+              <div class="single_service">
+                <span>02</span>
+                <h4>Training and Coaching <br>
+                nationally </h4>
+                <p>
+                  With our partners BBFS who have a national training center network,
+                  we provide free training and coaching to trans footbal enthusiasts
+
+                </p>
+                <ul>
+                  <li><a href="#">Bringing change</a></li>
+                  <li><a href="#">Moving towards permanency</a></li>
+                  <li><a href="#">Expanding the community</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-4">
+            <div class="single_feature">
+              <div class="single_service">
+                <span>03</span>
+                <h4>Employment Opportunities</h4>
+                <p>
+                  We are taking our program one step further by providing employment to the trans community! Check out our job portal
+                </p>
+                <ul>
+                  <li><a href="#">Social Acceptance</a></li>
+                  <li><a href="#">Mainstreaming</a></li>
+                  <li><a href="#">D&I in the Workplace</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- our_service part end-->
+
+    <!-- our_project part start-->
+    <section class="our_project section_padding" id="portfolio">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-lg-4">
+            <div class="section_tittle">
+              <p>our project</p>
+              <h2>Our Initiatives</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6">
+            <div class="filters portfolio-filter project_menu_item">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="more_btn d-none d-md-block">
+              <a href="#" class="more_btn_iner">Upcoming Events!</a>
+            </div>
+          </div>
+        </div>
+        <div class="filters-content">
+          <div class="row justify-content-between portfolio-grid">
+            <div class="col-lg-6 col-sm-6 all buildings">
+              <div class="single_our_project">
+                <div class="single_offer">
+                  <img src="{% static 'display.jpg' %}" alt="offer_img_1" />
+                  <div class="hover_text">
+                    <p>Kickstarter Match</p>
+                    <a href="#"><h2>India's first all gender inclusive match!</h2></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6 all rebuild">
+              <div class="single_our_project">
+                <div class="single_offer">
+                  <img src="{% static 'workplace.jpeg' %}" alt="offer_img_1" />
+                  <div class="hover_text">
+                    <p>Making Permanent Impact</p>
+                    <a href="#"><h2>The world's first Trans football inclusivity program</h2></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="" class="animation_icon_2" alt="">
+    </section>
+    <!-- our_project part end-->
+
+    <!-- about part start-->
+    <section class="creative padding_bottom">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-start">
+          <div class="col-md-6 col-xl-6 ms">
+            <div class="creative_img">
+              <img src="{% static 'logo.png' %}" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="creative_part_text">
+              <h2>We want to bring change and sensitize!</h2>
+              <p>
+                In the modern era, people have been clouded with stereotypes
+                and prejudices. Let's break them together!
+              </p>
+              <span
+                >“There winged grass midst moving earth seed herb fifth you
+                multiply you divide cattle stars first cattle.</span
+              >
+              <a
+                href="https://www.youtube.com/watch?v=tDiJnd7SM2Y"
+                class="popup-youtube"
+                ><i class="fa fa-globe fa-2x"></i> See how we work</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about part end-->
+
+    <!--::review_part end::-->
+    <!-- <div class="review_part padding_bottom" id="testimonial">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-7">
+            <div class="section_tittle text-center">
+              <p>Testimonials</p>
+              <h2>What our Client say</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="review_part_text owl-carousel">
+              <div class="singler_eview_part">
+                <div class="client_info">
+                  <img src="img/client_1.png" alt="" />
+                  <h4>Justine Miller</h4>
+                  <p>Web developer at Envato</p>
+                </div>
+                <p>
+                  “There winged grass midst moving earth seed herb fifth you
+                  multiply you divide cattle stars first cattle was had spirit
+                  you're thing, night darkness. Which itself stars creature.
+                </p>
+              </div>
+              <div class="singler_eview_part">
+                <div class="client_info">
+                  <img src="img/client_2.png" alt="" />
+                  <h4>Danny Jonson</h4>
+                  <p>Creative director at Apple</p>
+                </div>
+                <p>
+                  “There winged grass midst moving earth seed herb fifth you
+                  multiply you divide cattle stars first cattle was had spirit
+                  you're thing, night darkness. Which itself stars creature.
+                </p>
+              </div>
+              <div class="singler_eview_part">
+                <div class="client_info">
+                  <img src="img/client_1.png" alt="" />
+                  <h4>Justine Miller</h4>
+                  <p>Web developer at Envato</p>
+                </div>
+                <p>
+                  “There winged grass midst moving earth seed herb fifth you
+                  multiply you divide cattle stars first cattle was had spirit
+                  you're thing, night darkness. Which itself stars creature.
+                </p>
+              </div>
+              <div class="singler_eview_part">
+                <div class="client_info">
+                  <img src="img/client_2.png" alt="" />
+                  <h4>Danny Jonson</h4>
+                  <p>Creative director at Apple</p>
+                </div>
+                <p>
+                  “There winged grass midst moving earth seed herb fifth you
+                  multiply you divide cattle stars first cattle was had spirit
+                  you're thing, night darkness. Which itself stars creature.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="img/animate_icon/icon_3.png" class="animation_icon_3" alt="">
+    </div> -->
+    <!--::review_part end::-->
+
+    <!--::cta_part start::-->
+    <div class="cta_part" style="background-image: url({% static 'fg.jpg' %})">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <div class="cta_iner">
+              <h1>Let’s impact the world together! Join the team</h1>
+              <a href="#" class="btn_1">Fill the form!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--::cta_part end::-->
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-sm-6 col-md-3 col-xl-3">
+            <div class="single-footer-widget footer_1">
+              <a href="index.html">
+                <img src="img/footer_logo.png" alt="" />
+              </a>
+              <ul>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+              <div class="social_icon">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-3">
+            <div class="single-footer-widget footer_2">
+              <h4>Companies</h4>
+              <ul>
+                <li>
+                  <a href="#">Keshav Suri Foundation</a>
+                </li>
+                <li>
+                  <a href="#">BBFS</a>
+                </li>
+                <li>
+                  <a href="#">ScoutMe</a>
+                </li>
+                <li>
+                  <a href="#">Sponsors</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-3">
+            <div class="single-footer-widget footer_2">
+              <h4>Resources</h4>
+              <ul>
+                <li>
+                  <a href="#">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#">Register</a>
+                </li>
+                <li>
+                  <a href="#">Social Media</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-3">
+            <div class="single-footer-widget footer_2">
+              <div class="single_contact_info">
+                <h3>Keshav Suri Foundation</h3>
+                <p></p>
+                <p>info@keshavsuri.foundation</p>
+              </div>
+              <div class="single_contact_info">
+                <h3>Bhaichung Bhutia Football Schools</h3>
+                <p></p>
+                <p>info@bbfootballschools.com</p>
+              </div>
+              <div class="single_contact_info">
+                <h3>ScoutMe</h3>
+                <p></p>
+                <p>contact@scoutme.in</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="copyright_part_text text-center">
+              <div class="row">
+                <div class="col-lg-12">
+                  <p class="footer-text m-0">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        ScoutMe &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="https://colorlib.com" target="_blank">Template credits</a>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="img/animate_icon/icon_2.png" class="animation_icon_2" alt="">
+
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <script src="{% static 'jquery-1.12.1.min.js' %}"></script>
+    <!-- popper js -->
+    <script src="{%static 'popper.min.js'%}"></script>
+    <!-- bootstrap js -->
+    <script src="{%static 'bootstrap.min.js'%}"></script>
+    <!-- easing js -->
+    <script src="{%static 'jquery.magnific-popup.js'%}"></script>
+    <!-- isotope js -->
+    <script src="{%static  'isotope.pkgd.min.js'%}"></script>
+    <!-- particles js -->
+    <script src="{% static 'owl.carousel.min.js'%}"></script>
+    <script src="{% static 'jquery.nice-select.min.js'%}"></script>
+    <!-- custom js -->
+    <script src="{% static 'custom.js'%}"></script>
+  </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'base/vendor.bundle.base.css' %}">
+    <link rel="stylesheet" href="{% static 'flag-icon-css/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'jquery-bar-rating/fontawesome-stars-o.css' %}">
+    <link rel="stylesheet" href="{% static 'jquery-bar-rating/fontawesome-stars.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <style media="screen">
+
+    .mt{
+
+      margin-top: 20px;
+    }
+    canvas{
+      height:300px;
+    }
+    a{
+      color:black;
+    }
+
+  </style>
+  <body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+          <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+          </div>
+          <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+              <span class="icon-menu"></span>
+            </button>
+            <ul class="navbar-nav mr-lg-2">
+              <li class="nav-item nav-search d-none d-lg-block">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="search">
+                      <i class="icon-search"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Search Companies" aria-label="search" aria-describedby="search">
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item dropdown d-lg-flex d-none">
+                  <a href="{% url 'apply'  %}"> <button type="button" class="btn btn-info font-weight-bold">View Application</button></a>
+                </li>
+              <li class="nav-item dropdown d-flex mr-4 ">
+                <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+                  <i class="icon-cog"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                  <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
+                  <a class="dropdown-item preview-item">
+                      <i class="icon-head"></i> Profile
+                  </a>
+                  <a class="dropdown-item preview-item" href="{% url 'logout' %}">
+                      <i class="icon-inbox"></i> Logout
+                  </a>
+                  <a class="dropdown-item preview-item" href="{% url 'changePassword' %}">
+                      <i class="icon-unlock"></i> Change Password
+                  </a>
+                </div>
+              </li>
+
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+              <span class="icon-menu"></span>
+            </button>
+          </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+          <!-- partial:partials/_sidebar.html -->
+          <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <div class="user-profile">
+              <div class="user-designation">
+                  Developer
+              </div>
+            </div>
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'dashboardhome' %}">
+                  <i class="icon-box menu-icon"></i>
+                  <span class="menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                  <i class="icon-disc menu-icon"></i>
+                  <span class="menu-title">Apply</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="ui-basic">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'apply' %}">View Application</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'workExperience' %}">Professional</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'education' %}">Education</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'resume' %}">Resume</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'details' %}">Details</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'recruiters' %}">
+                  <i class="icon-file menu-icon"></i>
+                  <span class="menu-title">Recruiters</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title">Profile</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="auth">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'viewprofile' %}"> View Profile </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'editprofile' %}"> Edit Profile </a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="https://keshavsuri.foundation/events">
+                  <i class="icon-command menu-icon"></i>
+                  <span class="menu-title">Other Opportunities</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#au" aria-expanded="false" aria-controls="auth">
+                  <i class="icon-box menu-icon"></i>
+                  <span class="menu-title">App. Answers</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="au">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'details' %}"> Fill Answers! </a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="docs/documentation.html">
+                  <i class="icon-book menu-icon"></i>
+                  <span class="menu-title">Contact</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- partial -->
+          <div class="main-panel">
+            <div class="content-wrapper">
+              <div class="row">
+                <div class="col-sm-12 mb-4 mb-xl-0">
+                  <h4 class="font-weight-bold text-dark">Hi, {{profile.user}}</h4>
+                  <p class="font-weight-normal mb-2 text-muted">{% now "d M, Y" %}</p>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-xl-3 flex-column d-flex grid-margin stretch-card">
+                  <div class="row flex-grow">
+                    <div class="col-sm-12 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                              <h4 class="card-title">Opportunities</h4>
+                              <p>Real Time Updates!</p>
+                              <h4 class="text-dark font-weight-bold mb-2">{{js}}</h4>
+                              <canvas id="customers"></canvas>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                              <h4 class="card-title">Recruiters</h4>
+                              <p>From All around the countries</p>
+                              <h4 class="text-dark font-weight-bold mb-2">{{c}}</h4>
+                              <canvas id="orders"></canvas>
+                          </div>
+                        </div>
+                   </div>
+                  </div>
+                </div>
+                  <div class="col-lg-4 grid-margin stretch-card">
+                    <div class="card">
+
+                      <div class="card-body">
+                        <h4 class="card-title">Track the User chart!</h4>
+                              <br> <br>
+                        <canvas id="areaChart"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 grid-margin stretch-card">
+
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title">The Company Divide</h4>
+                            <br>
+                        <canvas id="doughnutChart"></canvas>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="row">
+
+                <div class="col-xl-6 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title mb-3">Messages for You</h4>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="text-dark">
+                            {% for m in messages %}
+                            <div class="d-flex pb-3 border-bottom justify-content-between mt">
+                              <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
+                              <div class="font-weight-bold mr-sm-4">
+                              <a href="{% url 'viewmessage' m.id %}">  <div>{{m.message|truncatewords:5}}</div></a>
+                                <div class="text-muted font-weight-normal mt-1">{{m.jobstat.cid}} - {{m.jobstat.company}}</div>
+                              </div>
+                              <div><h6 class="font-weight-bold text-info ml-sm-2">{{m.date}}</h6></div>
+                            </div>
+                            {% empty %}
+                            <div class="d-flex pb-3 border-bottom justify-content-between mt">
+                              <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
+                              <div class="font-weight-bold mr-sm-4">
+                                <div>No Messages Yet</div>
+                                <div class="text-muted font-weight-normal mt-1">Start Applying to Companies</div>
+                              </div>
+                              <div><h6 class="font-weight-bold text-info ml-sm-2">N/A</h6></div>
+                            </div>
+                            {% endfor %}
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="col-xl-6 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title mb-3">Your Applications</h4>
+                        <div class="row">
+
+                          <div class="col-sm-12 mt">
+                            <div class="text-dark">
+
+                              {% for j in jobs %}
+                              <div class="d-flex pb-3 border-bottom justify-content-between">
+                                <div class="mr-3">{{j.status}}</div>
+                                <div class="font-weight-bold mr-sm-4">
+                                  <div>{{j.id.title}}</div>
+                                  <div class="text-muted font-weight-normal mt-1">{{j.company}}</div>
+                                </div>
+                                <div><h6 class="font-weight-bold text-info ml-sm-2">{{j.date_applied}}</h6></div>
+                              </div>
+                              {% empty %}
+                              <div class="d-flex pb-3 border-bottom justify-content-between">
+                                <div class="mr-3">No Apps</div>
+                                <div class="font-weight-bold mr-sm-4">
+                                  <div>No Applications</div>
+                                  <div class="text-muted font-weight-normal mt-1">You have no Applications</div>
+                                </div>
+                                <div><h6 class="font-weight-bold text-info ml-sm-2">N/A</h6></div>
+                              </div>
+                              {% endfor %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2019 <a href="https://scoutme.in" target="_blank" class="text-muted">ScoutMe</a>. All rights reserved.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="icon-heart"></i></span>
+              </div>
+            </footer>
+            <!-- partial -->
+          </div>
+          <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+      </div>
+  </body>
+<script type="text/javascript" src="{% static 'base/vendor.bundle.base.js' %}"></script>
+<script type="text/javascript" src="{% static 'off-canvas.js' %}"></script>
+<script type="text/javascript" src="{% static 'hoverable-collapse.js' %}"></script>
+<script type="text/javascript" src="{% static 'template.js' %}"></script>
+<script type="text/javascript" src="{% static 'chart.js/Chart.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'jquery-bar-rating/jquery.barrating.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'dashboard.js' %}"></script>
+<script type="text/javascript" src="{% static 'chart copy.js' %}"></script>
+</html>
