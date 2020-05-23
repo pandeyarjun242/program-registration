@@ -61,7 +61,6 @@ EMAIL_HOST_PASSWORD = 'arjun2003'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-DEFAULT_FROM_EMAIL = 'pandeyarjun.242@gmail.com''
 
 TEMPLATES = [
     {
