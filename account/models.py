@@ -5,7 +5,11 @@ cities = [
     ( 'BGL','Bangalore'),
     ('DEL','Delhi'),
     ('BOM','Mumbai'),
-    ( 'NE','North-East'),
+    ('NE','North-East'),
+    ('CHD', 'Chandigarh'),
+    ('PJB', 'Punjab'),
+    ('AMD', 'Ahemdabad'),
+    ('OT', 'Others')
 ]
 
 # Create your models here.
