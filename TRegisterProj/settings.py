@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'en)d--y&zox!o#98m0g_r9*uzjthsmzw6p50q0gn=7+2+2%k52'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['139.59.12.100', 'localhost', 'kickinggenderboundaries.com']
 
