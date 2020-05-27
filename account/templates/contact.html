@@ -2,6 +2,74 @@
 <html lang="en">
 {% load static %}
   <head>
+    <style media="screen">
+    .fa{
+      font-size:35px;
+
+    }
+    .nowid{
+
+    }
+    .ms{
+      margin-left:10vw;
+    }
+    .navbg{
+
+    }
+    @media only screen and (max-width:990px){
+      .nowid{
+        text-align: center !important;
+      }
+      .banner_text_iner h5{
+        text-align: center !important;
+        margin-left: 20px;
+      }
+      nav{
+        display: none;
+      }
+      nav{
+        width:0;
+        height:0;
+      }
+      nav a img{
+        width:0;
+        height:0;
+      }
+      .navbar-toggler {
+        width:0;
+        height:0;
+      }
+      .ti-menu{
+        width:0;
+        height:0;
+      }
+
+    }
+    .rig{
+      text-align: right;
+    }
+    .banner_part{
+      background-image: url({% static 'fball.jpeg' %})
+    }
+    .single_client_logo{
+      width: 8vw;
+      height:8vw;
+      margin: 0 100px !important;
+    }
+    .wid{
+      width:80vw;
+    }
+    @media only screen and (max-width:1100px){
+
+      .ms{
+        margin: 0 !important;
+      }
+    }
+    .navbar-brand{
+      width:9vh;
+      height:9vh;
+    }
+    </style>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -37,7 +105,13 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg navbar-light">
               <a class="navbar-brand" href="index.html">
-                <img src="img/logo.png" alt="logo" />
+                <img src="{% static 'bbfs.jpg' %}" alt="logo" />
+              </a>
+              <a class="navbar-brand" href="index.html">
+                <img src="{% static 'ksfw.jpg' %}" alt="logo" />
+              </a>
+              <a class="navbar-brand" href="index.html">
+                <img src="{% static 'scoutme.png' %}" alt="logo" />
               </a>
               <button
                 class="navbar-toggler"
