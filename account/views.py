@@ -57,17 +57,19 @@ class Signup(APIView):
             text = msg.as_string()
             profile.save()
             server = smtplib.SMTP('smtp.gmail.com', 587)
-            server.starttls()
-            server.login('arjun@scoutme.in', 'arjun2003')
-            server.sendmail('arjun@scoutme.in',[email],text)
             newmsg = MIMEMultipart()
             newmsg['From'] = "arjun@scoutme.in"
             newmsg['To'] = "arjun@scoutme.in"
             newmsg['Subject'] = 'registered'
-            n =  "\nEmail - "+email+"\nMobile- "+mobile +"\nMessage - " + message
+            n =  "\nEmail - "+email+"\nMobile- "+mobile +"\nMessage - " + message + "\nCity - "+cityPreference
             newmsg.attach(MIMEText(n,'plain'))
             newtext = newmsg.as_string()
-            server.sendmail('arjun@scoutme.in',["arjun@scoutme.in"],newtext)
+            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server.starttls()
+            server.login('pandeyarjun.242@gmail.com', 'arjun2003')
+            server.sendmail('pandeyarjun.242@gmail.com',[email],text)
+            server.sendmail('pandeyarjun.242@gmail.com',["arjun@scoutme.in"],newtext)
+            server.quit()
             return render(request, 'aftersignup.html',{"error":"Your account has been created!"})
 class Contact(APIView):
     def get(self, request):
@@ -77,6 +79,7 @@ class Contact(APIView):
         email = request.POST['email']
         message = request.POST['message']
         subject = request.POST['subject']
+        rec = [email]
         userm =  "Hi "+name+"\n\nThank you for your query! We will be reaching out to you in the next 3 days.\n\nStay tuned for more! \n\nBest,\nThe Kicking Gender Boundaries Team"
         msg = MIMEMultipart()
         msg['From'] = "arjun@scoutme.in"
@@ -95,7 +98,8 @@ class Contact(APIView):
         #Gaps for convenience
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
-        server.login('arjun@scoutme.in', 'arjun2003')
-        server.sendmail('arjun@scoutme.in',[email],text)
-        server.sendmail('arjun@scoutme.in',["arjun@scoutme.in"],newtext)
+        server.login('pandeyarjun.242@gmail.com', 'arjun2003')
+        server.sendmail('pandeyarjun.242@gmail.com',rec,text)
+        server.sendmail('pandeyarjun.242@gmail.com',["arjun@scoutme.in"],newtext)
+        server.quit()
         return redirect('home')
