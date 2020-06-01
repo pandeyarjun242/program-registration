@@ -8,12 +8,10 @@
       /* Set height to 100% for body and html to enable the background image to cover the whole page: */
 body, html {
   height: 100%;
-  color:black;
 }
 h1{
   color:black;
 }
-
 .bgimg {
   /* Background image */
   background-image: url("{% static 'fg.jpg' %}");
@@ -70,14 +68,15 @@ hr {
     <p> <a href="{% url 'home' %}">Home</a> </p>
   </div>
   <div class="middle">
-    <h1>Hi you have been registered!</h1>
-    <br><br><br>
-    <p>We are launching very soon</p>
+    <h1>Hi you have been registered to our mailing list!</h1>
+
+    <br><br><br><br><br><br>
+    <p>Join in our events and keep supporting us!</p>
   </div>
   <br><br>
   <br>
   <div class="middle">
-    <p>Head <a style="color:white" href="{% url 'home' %}">home</a> for all details!</p>
+    <p>Head <a style="color:white;" href="{% url 'home' %}">home</a> for all details!</p>
   </div>
 </div>
   </body>

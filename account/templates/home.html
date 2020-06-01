@@ -10,10 +10,131 @@
       .nowid{
 
       }
+      /*
+Bootstrap Breakpoints Mixins
+*/
+/*
+Bootstrap Variables
+*/
+/*
+Code
+*/
+.m-subscribe1 {
+  background: #f8f9fa;
+  padding-bottom: 40px;
+  padding-top: 44px;
+  width: 100%;
+}
+.m-subscribe1__title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-top: 2px;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .m-subscribe1__title {
+    font-size: 2rem;
+    text-align: left;
+  }
+}
+.m-subscribe1__form {
+  float: none;
+  margin-top: 36px;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .m-subscribe1__form {
+    float: right;
+    margin-top: 0;
+    width: auto;
+  }
+}
+.m-subscribe1__form input[type=email] {
+  border-radius: 20px;
+  display: block;
+  height: 43px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  min-width: auto;
+  position: relative;
+  top: -4px;
+  width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .m-subscribe1__form input[type=email] {
+    display: inline-block;
+    margin-bottom: 0;
+    width: calc(100% - 160px);
+  }
+}
+@media (min-width: 992px) {
+  .m-subscribe1__form input[type=email] {
+    display: block;
+    margin-right: 16px;
+    width: auto;
+  }
+}
+@media (min-width: 992px) {
+  .m-subscribe1__form input[type=email] {
+    min-width: 290px;
+  }
+}
+@media (min-width: 1200px) {
+  .m-subscribe1__form input[type=email] {
+    min-width: 334px;
+  }
+}
+.m-subscribe1__form button[type=submit] {
+  border-radius: 20px;
+  display: block;
+  float: right;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 3.2;
+  margin-left: auto;
+  padding: 0 32px;
+  width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .m-subscribe1__form button[type=submit] {
+    display: inline-block;
+    width: auto;
+  }
+}
+@media (min-width: 992px) {
+  .m-subscribe1__form button[type=submit] {
+    display: block;
+    float: none;
+    margin-left: 0;
+  }
+}
+
       .ms{
         margin-left:10vw;
       }
       .navbg{
+
+      }
+      .more{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .more input{
+        width:18vw;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      i{
+        text-align: center;
+        padding-right: 5px;
+      }
+      .ones{
+        display: flex !important;
+        align-items: center;
+        flex-direction: row;
 
       }
       @media only screen and (max-width:990px){
@@ -22,8 +143,9 @@
         }
         .banner_text_iner h5{
           text-align: center !important;
-          margin-left: 20px;
+          margin-left: 25px;
         }
+        o
         nav{
           display: none;
         }
@@ -42,6 +164,7 @@
         .ti-menu{
           width:0;
           height:0;
+          opacity: 0;
         }
 
       }
@@ -68,6 +191,15 @@
       .navbar-brand{
         width:9vh;
         height:9vh;
+      }
+      .banner_part:after{
+        background-color: transparent !important;
+      }
+      .cta_part:after{
+        opacity: 0.75 !important;
+      }
+      .cta_part{
+        height: 70vh !important;
       }
     </style>
     <!-- Required meta tags -->
@@ -98,7 +230,7 @@
 
   <body>
     <!--::header part start::-->
-    <header class="main_menu home_menu" style="background:#00d089">
+    <header class="main_menu home_menu" style="background:">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12">
@@ -140,8 +272,8 @@
               <div class="social_icon d-none d-lg-block">
                 <a href="https://www.facebook.com/KeshavSuriFoundation/?ref=br_rs"><i class="fa fa-facebook fa-2x"></i></a>
                 <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                <a href="https://www.instagram.com/keshavsurifoundation/"><i class="fa fa-instagram fa-2x"></i></a>
+                <a href="https://www.linkedin.com/company/scoutme/"><i class="fa fa-linkedin fa-2x"></i></a>
+                <a href="https://www.instagram.com/bbfschools/"><i class="fa fa-instagram fa-2x"></i></a>
               </div>
             </nav>
           </div>
@@ -151,7 +283,7 @@
     <!-- Header part end-->
 
     <!-- banner part start-->
-    <section class="banner_part" style="background-image:url({% static 'fball.jpeg' %})">
+    <section class="banner_part" style="background-image:url({% static 'fb.jpeg' %});" >
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 offset-lg-1">
@@ -160,8 +292,8 @@
 
                 <h1 class="nowid">Kicking Gender Boundaries </h1>
                 <br>
-                <h5 class="wid"> We are India's first national level trans inclusivity program! We provide sport and Employment opportunities for Trans community to shine and showcase their talents. Become a part of this movement today!</h5>
-                <a href="{% url 'signup' %}" class="btn_1">Register today!</a>
+                <h5 class="wid">Are you trans and extremely passionate about sports? Join our program and let's impact the world together. This is India's first inclusivity program in the domain of sports</h5>
+                <a href="{% url 'signup' %}" class="btn_1">Register Now!</a>
               </div>
             </div>
           </div>
@@ -197,6 +329,8 @@
     <!-- about part start-->
     <section class="about_part section_padding">
       <div class="container">
+        <h5 class="text-center" style="font-size:35px;">What do we do?</h5>
+        <br><br><br>
         <div class="row align-items-center justify-content-between">
           <div class="col-md-6">
             <div class="about_part_text">
@@ -213,7 +347,7 @@
           <div class="col-md-6">
               <div class="about_part_text rig">
                 <h5>D&I in the workplace</h5>
-                <h2>Sensitizing the workplace</h2>
+                <h2>Sensitizing the ecosystem of sports</h2>
                 <p>
                     The workplace can be a huge avenue for cis-sexist activites!
                     For decades, the trans have been neglected and discriminated against but we plan to give
@@ -258,7 +392,7 @@
                 nationally </h4>
                 <p>
                   With our partners BBFS who have a national training center network,
-                  we provide free training and coaching to trans footbal enthusiasts
+                  we provide free training and coaching to trans footbal enthusiasts. Register now!
 
                 </p>
                 <ul>
@@ -273,10 +407,11 @@
             <div class="single_feature">
               <div class="single_service">
                 <span>03</span>
-                <h4>Employment Opportunities</h4>
+                <h4>More Opportunities</h4>
                 <p>
-                  We also plan to launch a program to take inclusivity one step further by providing permanent jobs at training centers!
+                  We also plan to launch a program to take inclusivity one step further by providing permanent jobs at training centers! Our goal is to ensure that everyone has equal opportunity
                 </p>
+                <br>
                 <ul>
                   <li><a href="#">Social Acceptance</a></li>
                   <li><a href="#">Mainstreaming</a></li>
@@ -318,7 +453,7 @@
                   <img src="{% static 'display.jpg' %}" alt="offer_img_1" />
                   <div class="hover_text">
                     <p>Kickstarter Match</p>
-                    <a href="#"><h2>India's first all gender inclusive match!</h2></a>
+                    <a href="https://www.thelalit.com/press-releases/kicking-gender-boundaries-2/"><h2>India's first all gender inclusive match!</h2></a>
                   </div>
                 </div>
               </div>
@@ -326,7 +461,7 @@
             <div class="col-lg-6 col-sm-6 all rebuild">
               <div class="single_our_project">
                 <div class="single_offer">
-                  <img src="{% static 'workplace.jpeg' %}" alt="offer_img_1" />
+                  <img src="{% static 'bbfst.jpg' %}" alt="offer_img_1" />
                   <div class="hover_text">
                     <p>Making Permanent Impact</p>
                     <a href="#"><h2>The world's first Trans football inclusivity program</h2></a>
@@ -352,19 +487,20 @@
           </div>
           <div class="col-md-6 col-xl-4">
             <div class="creative_part_text">
-              <h2>We want to bring change and sensitize!</h2>
+              <h2>Do you want to become an ally?</h2>
               <p>
-                In the modern era, people have been clouded with stereotypes
-                and prejudices. Let's break them together!
+               If you support our cause, go follow our social media channels and join our mailing list below!
               </p>
-              <span
-                >Let's change the world together and make every place a diverse and inclusive one!</span
+              <span>Let's change the world together and make every place a diverse and inclusive one!</span
               >
-              <a
-                href="https://scoutme.in"
-                class="popup-youtube"
-                ><i class="fa fa-globe fa-2x"></i> See how we work</a
-              >
+
+                <div class="social_icon ones">
+                  <a href="https://www.facebook.com/bbfschools/"><i class="fa fa-facebook"></i></a>
+                  <a href="https://twitter.com/KSF_IN"><i class="fa fa-twitter"></i></a>
+                  <a href="https://www.linkedin.com/company/scoutme/"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://www.instagram.com/keshavsurifoundation/"><i class="fa fa-instagram"></i></a>
+                </div>
+
             </div>
           </div>
         </div>
@@ -373,83 +509,35 @@
     <!-- about part end-->
 
     <!--::review_part end::-->
-    <!-- <div class="review_part padding_bottom" id="testimonial">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-lg-7">
-            <div class="section_tittle text-center">
-              <p>Testimonials</p>
-              <h2>What our Client say</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="review_part_text owl-carousel">
-              <div class="singler_eview_part">
-                <div class="client_info">
-                  <img src="img/client_1.png" alt="" />
-                  <h4>Justine Miller</h4>
-                  <p>Web developer at Envato</p>
-                </div>
-                <p>
-                  “There winged grass midst moving earth seed herb fifth you
-                  multiply you divide cattle stars first cattle was had spirit
-                  you're thing, night darkness. Which itself stars creature.
-                </p>
-              </div>
-              <div class="singler_eview_part">
-                <div class="client_info">
-                  <img src="img/client_2.png" alt="" />
-                  <h4>Danny Jonson</h4>
-                  <p>Creative director at Apple</p>
-                </div>
-                <p>
-                  “There winged grass midst moving earth seed herb fifth you
-                  multiply you divide cattle stars first cattle was had spirit
-                  you're thing, night darkness. Which itself stars creature.
-                </p>
-              </div>
-              <div class="singler_eview_part">
-                <div class="client_info">
-                  <img src="img/client_1.png" alt="" />
-                  <h4>Justine Miller</h4>
-                  <p>Web developer at Envato</p>
-                </div>
-                <p>
-                  “There winged grass midst moving earth seed herb fifth you
-                  multiply you divide cattle stars first cattle was had spirit
-                  you're thing, night darkness. Which itself stars creature.
-                </p>
-              </div>
-              <div class="singler_eview_part">
-                <div class="client_info">
-                  <img src="img/client_2.png" alt="" />
-                  <h4>Danny Jonson</h4>
-                  <p>Creative director at Apple</p>
-                </div>
-                <p>
-                  “There winged grass midst moving earth seed herb fifth you
-                  multiply you divide cattle stars first cattle was had spirit
-                  you're thing, night darkness. Which itself stars creature.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    {% if error %}
+    <h5>{{error}}</h5>
+    {% endif %}
+    <section class="m-subscribe1">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <h4 style="font-size:30px;" class="m-subscribe1__title">Support us and become an ally!</h4>
       </div>
-      <img src="img/animate_icon/icon_3.png" class="animation_icon_3" alt="">
-    </div> -->
+      <div class="col-12 col-lg-6">
+        <form class="form-inline m-subscribe1__form" action="{% url 'mailinglist' %}"  method="post">
+          {% csrf_token %}
+          <input type="email" name="email" class="form-control" id="cta_newsletter_email" placeholder="Email...">
+          <button type="submit" class="btn btn-primary mb-2">Support us!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
     <!--::review_part end::-->
 
     <!--::cta_part start::-->
-    <div class="cta_part" style="background-image: url({% static 'fg.jpg' %})">
+    <div class="cta_part" style="background-image: url({% static 'prt.jpeg' %})">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-7">
             <div class="cta_iner">
-              <h1>Let’s impact the world together! Join the team</h1>
-              <a href="#" class="btn_1">Forms coming soon!</a>
+              <h1>Want to hold an exhibition match in your city?</h1>
+              <a href="{% url 'contact' %}" class="btn_1">Contact Us!</a>
             </div>
           </div>
         </div>
@@ -469,13 +557,13 @@
               <ul>
                 <li><a href="#">Work</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
               </ul>
               <div class="social_icon">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/scoutme/"><i class="fa fa-linkedin"></i></a>
+                <a href=""><i class="fa fa-instagram"></i></a>
               </div>
             </div>
           </div>
@@ -484,13 +572,13 @@
               <h4>Partners</h4>
               <ul>
                 <li>
-                  <a href="#">Keshav Suri Foundation</a>
+                  <a href="https://keshavsuri.foundation">Keshav Suri Foundation</a>
                 </li>
                 <li>
-                  <a href="#">BBFS</a>
+                  <a href="https://bbfootballschools.com">BBFS</a>
                 </li>
                 <li>
-                  <a href="#">ScoutMe</a>
+                  <a href="http://scoutme.in">ScoutMe</a>
                 </li>
               </ul>
             </div>
@@ -519,7 +607,7 @@
                 <p>info@keshavsuri.foundation</p>
               </div>
               <div class="single_contact_info">
-                <h3>Bhaichung Bhutia Football Schools</h3>
+                <h3> <a href="#"></a> Bhaichung Bhutia Football Schools</h3>
                 <p></p>
                 <p>info@bbfootballschools.com</p>
               </div>
@@ -570,5 +658,22 @@
     <script src="{% static 'jquery.nice-select.min.js'%}"></script>
     <!-- custom js -->
     <script src="{% static 'custom.js'%}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+          var scroll_pos = 0;
+          $(document).scroll(function() {
+              scroll_pos = $(this).scrollTop();
+              if(scroll_pos > 210) {
+                  $("header").css('background-color', '#002F46');
+              } else {
+                  $("header").css('background-color', 'transparent');
+              }
+          });
+      });
+    </script>
   </body>
 </html>

@@ -20,3 +20,5 @@ class Player(models.Model):
     age = models.IntegerField(default = 15)
     description = models.CharField(max_length = 1000, null = True)
     cityPreference = models.CharField(max_length = 30, choices = cities)
+class Ally(models.Model):
+    email = models.EmailField(unique = True)
